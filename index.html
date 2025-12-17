@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Habit & Productivity Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>🌱 Daily Habit Tracker</h1>
+  <p id="currentDate" style="font-weight:600; margin-bottom:10px;"></p>
+
+
+  <!-- DAILY HABITS -->
+  <h2>🌞 Daily Habits</h2>
+
+  <!-- WATER -->
+  <div class="habit">
+    💧 Water (4L):
+    <button onclick="changeWater(-0.5)">-</button>
+    <span id="water">0</span> / 4 L
+    <button onclick="changeWater(0.5)">+</button>
+    <textarea placeholder="Reason if not completed" id="waterNote"></textarea>
+  </div>
+
+  <!-- HABITS LIST -->
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('wake')">
+    ⏰ Wake up before 5 AM
+    <textarea id="wakeNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('screen')">
+    📱 Reduce screen time
+    <textarea id="screenNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('college')">
+    📚 College self-study
+    <textarea id="collegeNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('tech')">
+    💻 Technical skill practice
+    <textarea id="techNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('communication')">
+    🗣 Improve communication skill
+    <textarea id="communicationNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('reading')">
+    📖 Read books
+    <textarea id="readingNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('hindi')">
+    🇮🇳 Spoken Hindi
+    <textarea id="hindiNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <div class="habit">
+    <input type="checkbox" onchange="toggleHabit('learn')">
+    🧠 Learn something new (30 min)
+    <textarea id="learnNote" placeholder="Reason if not completed"></textarea>
+  </div>
+
+  <p id="habitPercent">Habit Completion: 0%</p>
+
+  <!-- DAILY PRODUCTIVITY -->
+  <h2>📊 Daily Productivity</h2>
+  <progress id="dailyProgress" value="0" max="100"></progress>
+  <p id="dailyText">0% Productive</p>
+  <p id="dailyMessage"></p>
+
+  <!-- WEEKLY TASKS -->
+  <h2>📅 Weekly Tasks</h2>
+  <input id="weeklyInput" placeholder="Add weekly task">
+  <button onclick="addTask('weekly')">Add</button>
+  <ul id="weeklyList"></ul>
+
+  <!-- MONTHLY TASKS -->
+  <h2>🗓 Monthly Goals</h2>
+  <input id="monthlyInput" placeholder="Add monthly goal">
+  <button onclick="addTask('monthly')">Add</button>
+  <ul id="monthlyList"></ul>
+  <hr>
+   
+  <h2>📊 Weekly Analysis</h2>
+  <p id="weeklyResult"></p>
+
+  <h2>📈 Monthly Analysis</h2>
+  <p id="monthlyResult"></p>
+  <h2>📊 Weekly Progress Chart</h2>
+  <canvas id="weeklyChart" width="300" height="200"></canvas>
+
+  <h2>📈 Monthly Progress Chart</h2>
+  <canvas id="monthlyChart" width="300" height="200"></canvas>
+
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
